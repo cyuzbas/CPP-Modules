@@ -6,20 +6,23 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:38:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 19:21:42 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/19 19:52:33 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 Phonebook::Phonebook(void){
-	std::cout << "Phone Constructor called" << std::endl;
+	std::cout << std::endl;
+	std::cout << "Welcome to your awesome phonebook!" << std::endl;
+	std::cout << std::endl;
 	index = 0;        
 	return;
 }
 
 Phonebook::~Phonebook(void){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "You are leaving your awesome phonebook! BYE!" << std::endl;
+	std::cout << std::endl;
 	return;
 }
 
@@ -37,69 +40,23 @@ void Phonebook::setInfo(std::string message, std::string info, void (Contact::*f
 
 int	Phonebook::addContact(void){
 	std::string info;
-
-	Phonebook::setInfo("Enter First Name: ", info, &Contact::setFirstName, this->contacts[index]);
-	Phonebook::setInfo("Enter Last Name: ", info, &Contact::setLastName, this->contacts[index]);
-	Phonebook::setInfo("Enter Nickname: ", info, &Contact::setNickname, this->contacts[index]);
-	Phonebook::setInfo("Enter Phone Number: ", info, &Contact::setPhoneNumber, this->contacts[index]);
-	Phonebook::setInfo("Enter Darkest Secret: ", info, &Contact::setDarkSecret, this->contacts[index]);
-	index++;
-	// while (!info.length()){
-	// 	std::cout << "Enter First Name: ";
-	// 	std::getline(std::cin, info);
-	// 	if (!info.length())
-	// 		std::cout << "Contact can't have empty fields" << std::endl;
-	// 	else
-	// 		contact.setFirstName(info);
-	// }
-	// std::cin.clear();
-	// info = "\0";
-	// while (!info.length()){
-	// 	std::cout << "Enter Last Name: ";
-	// 	std::getline(std::cin, info);
-	// 	if (!info.length())
-	// 		std::cout << "Contact can't have empty fields" << std::endl;
-	// 	else
-	// 		contact.setLastName(info);
-	// }
-	// info = "\0";
-	// // std::cin.clear();
-	// while (!info.length()){
-	// 	std::cout << "Enter Nickname: ";
-	// 	std::getline(std::cin, info);
-	// 	if (!info.length())
-	// 		std::cout << "Contact can't have empty fields" << std::endl;
-	// 	else
-	// 		contact.setNickname(info);
-	// }
-	// std::cin.clear();
-	// info = "\0";
-	// while (!info.length()){
-	// 	std::cout << "Enter Phone Number: ";
-	// 	std::getline(std::cin, info);
-	// 	if (!info.length())
-	// 		std::cout << "Contact can't have empty fields" << std::endl;
-	// 	else
-	// 		contact.setPhoneNumber(info);
-	// }
-	// info = "\0";
-	// std::cin.clear();
-	// while (!info.length()){
-	// 	std::cout << "Enter Darkest Secret: ";
-	// 	std::getline(std::cin, info);
-	// 	if (!info.length())
-	// 		std::cout << "Contact can't have empty fields" << std::endl;
-	// 	else
-	// 		contact.setDarkSecret(info);
-	// }
-	// std::cin.clear();
-
+	int			i;
 	
-	// std::cout << info << std::endl;
+	if (index >= 8)
+		i = index % 8;
+	else
+		i = index;
+	Phonebook::setInfo("Enter First Name: ", info, &Contact::setFirstName, this->contacts[i]);
+	Phonebook::setInfo("Enter Last Name: ", info, &Contact::setLastName, this->contacts[i]);
+	Phonebook::setInfo("Enter Nickname: ", info, &Contact::setNickname, this->contacts[i]);
+	Phonebook::setInfo("Enter Phone Number: ", info, &Contact::setPhoneNumber, this->contacts[i]);
+	Phonebook::setInfo("Enter Darkest Secret: ", info, &Contact::setDarkSecret, this->contacts[i]);
+	index++;
+		
 	return (0);
 }
 
-void checkField(std::string str) {
+void Phonebook::checkField(std::string str) {
   if (str.length() > 10)
     std::cout << str.substr(0, 9) << ".";
   else
@@ -124,6 +81,7 @@ void Phonebook::displayPhoneBook(void){
 		std::cout << std::endl;
 	}
 	std::cout << "*-------------------------------------------*" << std::endl;
+	std::cout << std::endl;
 }
 
 int Phonebook::searchContact(int idx){

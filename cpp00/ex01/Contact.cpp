@@ -6,19 +6,17 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:38:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 17:59:08 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/19 19:35:20 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void){
-	std::cout << "Contact Constructor called" << std::endl;
 	return;
 }
 
 Contact::~Contact(void){
-	std::cout << "Destructor called" << std::endl;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:40:07 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 18:57:24 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/19 19:27:03 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	void 	setInfo(std::string message, std::string info,\
 			void (Contact::*f)(std::string), Contact &contact);
 	int		addContact(void);
+	void	checkField(std::string str);
 	void	displayPhoneBook(void);
 	int		searchContact(int index);
 };

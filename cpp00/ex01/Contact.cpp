@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:38:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 19:35:20 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/20 13:59:01 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,41 @@ Contact::~Contact(void){
 }
 
 void	Contact::setFirstName(std::string newFirstName){
-	firstName = newFirstName;
+	_firstName = newFirstName;
 }
 
 void	Contact::setLastName(std::string newLastName){
-	lastName = newLastName;
+	_lastName = newLastName;
 }
 
 void	Contact::setNickname(std::string newNickname){
-	nickname = newNickname;
+	_nickname = newNickname;
 }
 
 void	Contact::setPhoneNumber(std::string newPhoneNumber){
-	phoneNumber = newPhoneNumber;
+	_phoneNumber = newPhoneNumber;
 }
 
 void	Contact::setDarkSecret(std::string newDarkSecret){
-	darkSecret = newDarkSecret;
+	_darkSecret = newDarkSecret;
 }
 
 std::string	Contact::getFirstName(void){
-	return (firstName);
+	return (_firstName);
 }
 
 std::string	Contact::getLastName(void){
-	return (lastName);
+	return (_lastName);
 }
 
 std::string	Contact::getNickname(void){
-	return (nickname);
+	return (_nickname);
 }
 
 std::string	Contact::getPhoneNumber(void){
-	return (phoneNumber);
+	return (_phoneNumber);
 }
 
 std::string	Contact::getDarkSecret(void){
-	return (darkSecret);
+	return (_darkSecret);
 }

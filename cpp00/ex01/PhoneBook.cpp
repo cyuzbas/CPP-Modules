@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:38:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 19:52:33 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/20 14:10:13 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,45 @@
 
 Phonebook::Phonebook(void){
 	std::cout << std::endl;
-	std::cout << "Welcome to your awesome phonebook!" << std::endl;
-	std::cout << std::endl;
-	index = 0;        
+	std::cout << "\033[0;32mWelcome to your awesome phonebook!\033[0;37m";
+	std::cout << std::endl << std::endl;
+	_index = 0;        
 	return;
 }
 
 Phonebook::~Phonebook(void){
-	std::cout << "You are leaving your awesome phonebook! BYE!" << std::endl;
-	std::cout << std::endl;
+	std::cout << "\033[0;31mYou are leaving your awesome phonebook! BYE!\033[0;37m";
+	std::cout << std::endl << std::endl;
 	return;
 }
 
-void Phonebook::setInfo(std::string message, std::string info, void (Contact::*f)(std::string), Contact& contact){
+void Phonebook::setInfo(std::string message, std::string info, \
+						void (Contact::*f)(std::string), Contact& contact){
 	while (!info.length()){
 		std::cout << message;
 		std::getline(std::cin, info);
 		if (!info.length())
-			std::cout << "Contact can't have empty fields" << std::endl;
+			std::cout << "\033[0;33mContact can't have empty fields\033[0;37m" << std::endl;
 		else
 			(contact.*f)(info);
 	}
 	std::cin.clear();
 }
 
-int	Phonebook::addContact(void){
+void	Phonebook::addContact(void){
 	std::string info;
 	int			i;
 	
-	if (index >= 8)
-		i = index % 8;
+	if (_index >= 8)
+		i = _index % 8;
 	else
-		i = index;
+		i = _index;
 	Phonebook::setInfo("Enter First Name: ", info, &Contact::setFirstName, this->contacts[i]);
 	Phonebook::setInfo("Enter Last Name: ", info, &Contact::setLastName, this->contacts[i]);
 	Phonebook::setInfo("Enter Nickname: ", info, &Contact::setNickname, this->contacts[i]);
 	Phonebook::setInfo("Enter Phone Number: ", info, &Contact::setPhoneNumber, this->contacts[i]);
 	Phonebook::setInfo("Enter Darkest Secret: ", info, &Contact::setDarkSecret, this->contacts[i]);
-	index++;
-		
-	return (0);
+	_index++;
 }
 
 void Phonebook::checkField(std::string str) {
@@ -84,7 +83,7 @@ void Phonebook::displayPhoneBook(void){
 	std::cout << std::endl;
 }
 
-int Phonebook::searchContact(int idx){
+void Phonebook::searchContact(int idx){
 	std::cout << idx << ". Contact Information" << std::endl;
 	idx--;
 	std::cout << "----------------------" << std::endl;
@@ -93,5 +92,4 @@ int Phonebook::searchContact(int idx){
 	std::cout << "Nickname: " << this->contacts[idx].getNickname() << std::endl;
 	std::cout << "Phone Number: " << this->contacts[idx].getNickname() << std::endl;
 	std::cout << "Darkest Secret: " << this->contacts[idx].getNickname() << std::endl;
-	return (0);
 }

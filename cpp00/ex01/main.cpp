@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/07 15:42:45 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/19 19:52:18 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/20 14:06:25 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,32 @@ int main(void)
 
 	while (true)
 	{
-		std::cout << "Please make a choice by typing; ADD or SEARCH or EXIT: ";
+		std::cout << "\033[0;36mPlease make a choice by typing; ADD or SEARCH or EXIT: \033[0;37m";
 		std::getline(std::cin, choice);
 		std::cout << std::endl;
 		if (choice == "ADD"){
 			phone.addContact();
 		}else if (choice == "SEARCH"){
 			phone.displayPhoneBook();
-			std::string	index;
-			while (!index.length()){
+			std::string	contact_index;
+			while (!contact_index.length()){
 				std::cout << "Please choose a contact between 1-8: ";
-				std::getline(std::cin, index);
+				std::getline(std::cin, contact_index);
 				std::cout << std::endl;
-				if(index.length() == 1 && index >= "1" && index <= "8"){
-					phone.searchContact(stoi(index));
-				}
-				else{
-					std::cout << "Your choice is not valid!" << std::endl;
+				if(contact_index.length() == 1 \
+				&& contact_index >= "1" && contact_index <= "8"){
+					phone.searchContact(stoi(contact_index));
+				}else{
+					std::cout << "\033[0;33mYour choice is not valid!\033[0;37m" << std::endl;
 					std::cout << std::endl;
-					index = "";
+					contact_index = "";
 					std::cin.clear();
 				}
-				
 			}
 		}else if(choice == "EXIT"){
 			break;
 		}else{
-			std::cout << "Your choice is not valid!" << std::endl;
+			std::cout << "\033[0;33mYour choice is not valid!\033[0;37m" << std::endl;
 		}
 		std::cout << std::endl;
 		std::cin.clear();

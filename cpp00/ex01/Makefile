@@ -6,7 +6,7 @@
 #    By: cyuzbas <cyuzbas@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/12/07 14:43:12 by cyuzbas       #+#    #+#                  #
-#    Updated: 2022/12/19 14:31:26 by cyuzbas       ########   odam.nl          #
+#    Updated: 2022/12/20 07:44:17 by cyuzbas       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ OBJ				=	$(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)
 run : all
 	./PhoneBook
+
 $(OBJ_DIR)/%.o : %.cpp $(INC)
 	@mkdir -p $(dir $@)
 	$(CPP) $(FLAGS) -c $< -o $@
@@ -43,4 +44,4 @@ fclean : clean
 	rm -rf $(NAME)
 re : fclean all
 
-.PHONY : clean, fclean, all, re
+.PHONY : clean, fclean, all, re, run

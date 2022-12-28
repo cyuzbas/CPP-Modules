@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 12:38:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/20 14:10:13 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/28 14:15:56 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,6 @@ void Phonebook::searchContact(int idx){
 	std::cout << "First Name: " << this->contacts[idx].getFirstName() << std::endl;
 	std::cout << "Last Name: " << this->contacts[idx].getLastName() << std::endl;
 	std::cout << "Nickname: " << this->contacts[idx].getNickname() << std::endl;
-	std::cout << "Phone Number: " << this->contacts[idx].getNickname() << std::endl;
-	std::cout << "Darkest Secret: " << this->contacts[idx].getNickname() << std::endl;
+	std::cout << "Phone Number: " << this->contacts[idx].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->contacts[idx].getDarkSecret() << std::endl;
 }

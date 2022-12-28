@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/07 15:42:45 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/20 14:06:25 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2022/12/28 14:17:06 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main(void)
 		std::cout << "\033[0;36mPlease make a choice by typing; ADD or SEARCH or EXIT: \033[0;37m";
 		std::getline(std::cin, choice);
 		std::cout << std::endl;
+		if(std::cin.eof())
+			break;
 		if (choice == "ADD"){
 			phone.addContact();
 		}else if (choice == "SEARCH"){

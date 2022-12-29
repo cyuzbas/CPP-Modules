@@ -5,20 +5,20 @@
 /*                                                     +:+                    */
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/12/28 14:37:57 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2022/12/29 16:14:10 by cyuzbas       ########   odam.nl         */
+/*   Created: 2022/12/29 16:03:13 by cyuzbas       #+#    #+#                 */
+/*   Updated: 2022/12/29 16:12:50 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main(void){
-	
-	Zombie* zombie = newZombie("DynamicZombie");
-	if (zombie == NULL)
+	int N = 3;
+	Zombie* horde = zombieHorde(N, "Horde");
+	if (horde == NULL)
 		return (1);
-	zombie->announce();
-	delete zombie;
-	randomChump("StackZombie");
+	for (int i = 0; i < N; i++)
+		horde[i].announce();
+	delete [] horde;
 	return (0);
 }

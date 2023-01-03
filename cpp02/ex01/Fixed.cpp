@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/30 20:02:59 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/01/02 23:07:37 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/01/03 21:09:07 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ Fixed::Fixed( const int fpValue ) : _fpValue(fpValue * (1 << _nFractBits)){
 	return;
 }
 
+/* Fixed point math uses the top X bits of an integer as the whole number part of a 
+floating point number and the bottom Y bits as the fractional part. The way you 
+shift the float Y bits so that it fits in an integer is to multiply by float(2^Y).*/
 /* The round functions return the integral value nearest to x rounding half-way 
 cases away from zero, regardless of the current rounding direction.*/
 Fixed::Fixed( const float fpValue ) : _fpValue(roundf(fpValue * (1 << _nFractBits))){
@@ -64,6 +67,9 @@ int		Fixed::toInt( void ) const{
 	return ((int)this->_fpValue / (1 << this->_nFractBits));
 }
 
+/* When outputting floating point numbers, std::cout has a default precision of 6. 
+That is, it assumes all floating point variables are only significant to 6 digits 
+(the minimum precision of a float), and hence it will truncate anything after that.*/
 std::ostream & operator<<(std::ostream &o, Fixed const &instance){
 	o << instance.toFloat();
 	return o;

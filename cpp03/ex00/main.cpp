@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/04 14:00:22 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/01/06 17:26:55 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/07 16:31:05 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 }
 {
 	std::cout << std::endl;
-	std::cout << "[ TEST_ClapTrap : Name constructor & Destructor ]" << std::endl;
+	std::cout << PINK << "[ TEST_ClapTrap : Name constructor & Destructor ]" << std::endl;
 	ClapTrap robot("Clap");
 }
 {

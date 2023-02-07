@@ -6,20 +6,22 @@
 #    By: cyuzbas <cyuzbas@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/04 13:58:13 by cyuzbas       #+#    #+#                  #
-#    Updated: 2023/01/04 13:59:45 by cyuzbas       ########   odam.nl          #
+#    Updated: 2023/01/06 18:27:18 by cyuzbas       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	ClapTrap
+NAME			=	ScavTrap
 
 CPP				=	c++
 
 FLAGS			=	-Wall -Wextra -Werror -I -std=c++98 
 
 SRC				=	main.cpp \
-					ClapTrap.cpp
+					ClapTrap.cpp \
+					ScavTrap.cpp
 
-INC				=	ClapTrap.hpp
+INC				=	ClapTrap.hpp \
+					ScavTrap.hpp
 
 OBJ_DIR			=	obj
 OBJ				=	$(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
@@ -27,7 +29,7 @@ OBJ				=	$(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)
 
 run : all
-	./ClapTrap
+	./ScavTrap
 
 $(OBJ_DIR)/%.o : %.cpp $(INC)
 	@mkdir -p $(dir $@)

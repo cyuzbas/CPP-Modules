@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/04 14:00:28 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/01/04 22:26:03 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/07 18:21:21 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 ClapTrap::ClapTrap( void ) : _name("default"), \
 	_hitPoints(10), _energyPoints(10), _attackDamage(0){
-	std::cout << GRAY << "Default constructor called" << RESET << std::endl;
+	std::cout << GRAY << "[ClapTrap] Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), \
 	_hitPoints(10), _energyPoints(10), _attackDamage(0){
-	std::cout << GRAY << "String constructor called" << RESET << std::endl;
+	std::cout << GRAY << "[ClapTrap] String constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void ){
-	std::cout << GRAY << "Destructor called" << RESET << std::endl;
+	std::cout << GRAY << "[ClapTrap] Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src ){
-	std::cout << GRAY << "Copy Constructor called" << RESET << std::endl;
+	std::cout << GRAY << "[ClapTrap] Copy Constructor called" << std::endl;
 	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=( ClapTrap const &src ){
-	std::cout << "Copy Assignment operator called" << std::endl;
+	std::cout << "[ClapTrap] Copy Assignment operator called" << std::endl;
 	this->_name = src._name;
 	this->_hitPoints = src._hitPoints;
 	this->_energyPoints = src._energyPoints;
@@ -43,35 +43,35 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &src ){
 void ClapTrap::attack(const std::string& target){
 	if (this->_hitPoints && this->_energyPoints){
 		this->_energyPoints--;
-		std::cout << GREEN << "ClapTrap " << this->_name << " attacks " <<
-		target << ", causing '" << this->_attackDamage << "' points of damage!"
-		<< " (LEFT EP: "<< this->_energyPoints<< ")" << RESET << std::endl;
+		std::cout << GREEN << "ATTACK	" << this->_name
+		<< " attacks " << target << ", causing '" << this->_attackDamage
+		<< "' points of damage!" << " (LEFT HP: "<< this->_hitPoints << ")"
+		<< " (LEFT EP: "<< this->_energyPoints<< ")" << std::endl;
 	} else {
-		std::cout << YELLOW << "WARNING! ClapTrap " << 
-		this->_name << " is unable to attack due to";
+		std::cout << YELLOW << "ATTACK	WARNING! "
+		<< this->_name << " is unable to attack due to";
 		if (!this->_energyPoints)
-			std::cout << " insufficent energy points!!" << RESET << std::endl;
+			std::cout << " insufficent energy points!!" << std::endl;
 		else
-			std::cout << " his DEATH!!" << RESET << std::endl;
+			std::cout << " his DEATH!!" << std::endl;
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
 	if (this->_hitPoints && this->_energyPoints){
 		if (amount >= this->_hitPoints)
-			this->_hitPoints = 0;
-		else
-			this->_hitPoints -= amount;
-		std::cout << RED << "ClapTrap " << this->_name << " got attacked, " << 
+			amount = this->_hitPoints;
+		this->_hitPoints -= amount;
+		std::cout << RED << "DAMAGE	" << this->_name << " got attacked, " << 
 		"and lost '" << amount << "' hit points! (LEFT HP: " << this->_hitPoints
-		<< ")" << RESET << std::endl;
+		<< ")" << " (LEFT EP: " << this->_energyPoints << ")" << std::endl;
 	} else {
-		std::cout << YELLOW << "WARNING! ClapTrap " << this->_name << 
+		std::cout << YELLOW << "DAMAGE	WARNING! " << this->_name << 
 		" is unable to get attacked due to ";
 		if (!this->_energyPoints)
-			std::cout << "insufficent energy points!!" << RESET << std::endl;
+			std::cout << "insufficent energy points!!" <<  std::endl;
 		else
-			std::cout << "his DEATH!!" << RESET << std::endl;
+			std::cout << "his DEATH!!" << std::endl;
 	}
 }
 
@@ -79,16 +79,16 @@ void ClapTrap::beRepaired(unsigned int amount){
 	if (this->_hitPoints && this->_energyPoints){
 		this->_hitPoints += amount;
 		this->_energyPoints--;
-		std::cout << BLUE << "ClapTrap " << this->_name 
+		std::cout << BLUE << "HEAL	" << this->_name 
 		<< " found a healing potion and gained '" << amount
-		<< "' hit points back! (LEFT HP: " << this->_hitPoints
-		<< " )" << RESET << std::endl;
+		<< "' hit points! (LEFT HP: " << this->_hitPoints << ")" 
+		<< " (LEFT EP: " << this->_energyPoints << " )" << std::endl;
 	} else {
-		std::cout << YELLOW << "WARNING! ClapTrap " << 
+		std::cout << YELLOW << "HEAL	WARNING! " << 
 		this->_name << " is unable to heal due to ";
 		if (!this->_energyPoints)
-			std::cout << "insufficent energy points!!" << RESET << std::endl;
+			std::cout << "insufficent energy points!!"  << std::endl;
 		else
-			std::cout << "his DEATH!!" << RESET << std::endl;
+			std::cout << "his DEATH!!"  << std::endl;
 	}
 }

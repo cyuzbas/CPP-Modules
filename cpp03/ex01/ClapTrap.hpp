@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/04 14:00:25 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/01/04 21:23:17 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/01/06 18:17:39 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define YELLOW	"\033[33m"
 #define BLUE	"\033[34m"
 #define PINK	"\033[35m"
+#define CYAN	"\033[36m"
 #define RESET	"\033[0m"
 
 #include <iostream>
@@ -26,7 +27,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	
 	std::string		_name;
 	unsigned int	_hitPoints;

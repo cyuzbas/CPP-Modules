@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/05 17:02:32 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/08 14:18:58 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/08 17:56:09 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap 
+class ScavTrap : virtual public ClapTrap 
 {
 private:
 

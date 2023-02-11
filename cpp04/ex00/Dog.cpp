@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:14 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/11 17:02:03 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/11 17:05:43 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Dog::Dog() : Animal("Dog")
 {
-	// this->_type = "Dog";
 	std::cout << GRAY << "[Dog] Default constructor called" << std::endl;
 }
 

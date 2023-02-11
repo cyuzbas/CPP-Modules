@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:42:24 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/10 17:33:35 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/11 17:04:07 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ std::cout << RED << "TESTS FROM SUBJECT" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << BLUE << j->getType() << " " << std::endl;
 	std::cout << BLUE << i->getType() << " " << std::endl;
+	std::cout << BLUE << j->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
@@ -38,8 +38,8 @@ std::cout << RED << "---------------------------------------------------" << std
 	const WrongAnimal* i = new WrongCat();
 	std::cout << BLUE << meta->getType() << " " << std::endl;
 	std::cout << BLUE << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
 	meta->makeSound();
+	i->makeSound(); //will output the cat sound!
 	delete meta;
 	delete i;
 }

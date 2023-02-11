@@ -6,15 +6,15 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/10 16:58:49 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/11 17:02:12 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : Animal("Cat")
 {
-	this->_type = "Cat";
+	// this->_type = "Cat";
 	std::cout << GRAY << "[Cat] Default constructor called" << std::endl;
 }
 

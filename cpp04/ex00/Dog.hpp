@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:17 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/10 16:59:46 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/11 14:30:43 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class Dog : public Animal
 {
-protected:
-
-	
 public:
 
 	Dog( void );

@@ -6,15 +6,15 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:14 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/10 17:13:02 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/11 17:02:03 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : Animal("Dog")
 {
-	this->_type = "Dog";
+	// this->_type = "Dog";
 	std::cout << GRAY << "[Dog] Default constructor called" << std::endl;
 }
 

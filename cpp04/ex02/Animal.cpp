@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Animal.cpp                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/02/09 15:42:21 by cyuzbas       #+#    #+#                 */
+/*   Updated: 2023/02/13 12:54:55 by cyuzbas       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+
+Animal::Animal() : _type("Animal")
+{
+	std::cout << GREEN << "[Animal] Default constructor called" << std::endl;
+}
+
+Animal::Animal(std::string type) : _type(type)
+{
+	std::cout << GREEN << "[Animal] String constructor called" << std::endl;
+}
+
+Animal::Animal( Animal const &src )
+{
+	std::cout << GREEN << "[Animal] Copy Constructor called" << std::endl;
+	*this = src;
+}
+
+Animal::~Animal()
+{
+	std::cout << GREEN << "[Animal] Destructor called" << std::endl;
+}
+
+Animal &Animal::operator=( Animal const &src )
+{
+	std::cout << GREEN << "[Animal] Copy Assignment operator called" << std::endl;
+	this->_type = src._type;
+	return *this;
+}
+
+std::string Animal::getType( void )const
+{
+	return this->_type;
+}
+
+void Animal::makeSound()const
+{
+	std::cout << YELLOW << "Confused Animal Sound!" << std::endl;
+}

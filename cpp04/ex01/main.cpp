@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:42:24 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/13 13:01:11 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 13:35:27 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ int main() {
     const Cat     cat;
     Dog     dog1(dog);
     Cat     cat1(cat);
-    
-    // dog.getBrain()->getIdea(1);
+
     std::cout << GRAY << dog.getBrain()->getIdea(2) << std::endl;
     std::cout << dog1.getBrain()->getIdea(2) << std::endl;
 	dog.getBrain()->setIdea(2, "Dog new idea!!");

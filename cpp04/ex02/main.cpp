@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:42:24 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/13 13:36:56 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 15:29:11 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int main() {
 //     meta->makeSound();
 //     delete meta; 
 // }
-while(42){};
+// while(42){};
 }
 
 /*A shallow copy of an object only copies its data members and creates a new object 

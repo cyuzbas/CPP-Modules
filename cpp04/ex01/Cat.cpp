@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:11 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/12 21:31:04 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 12:54:35 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	std::cout << GRAY << "[Cat] Default constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat] Default constructor called" << std::endl;
 	this->_brain = new Brain();
 }
 
 // initialize brain with brain copyconstructor
 Cat::Cat( Cat const &src )
 {
-	std::cout << GRAY << "[Cat] Copy Constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat] Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = src;
 }
 
 Cat::~Cat()
 {
-	std::cout << GRAY << "[Cat] Destructor called" << std::endl;
+	std::cout << YELLOW << "[Cat] Destructor called" << std::endl;
 	delete _brain;
 }
 
 //overwrite current allocated memory with brain assignment operator.
 Cat &Cat::operator=( Cat const &src )
 {
-	std::cout << GRAY << "[Cat] Copy Assignment operator called" << std::endl;
+	std::cout << YELLOW << "[Cat] Copy Assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
 	this->_type = src._type;

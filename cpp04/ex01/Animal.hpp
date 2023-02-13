@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:42:19 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/12 20:43:45 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 12:59:43 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 
 #define GRAY	"\033[30m"
-#define RED  	"\033[31m"
+#define RED  	"\033[1;31m"
 #define GREEN 	"\033[32m"
 #define YELLOW	"\033[33m"
 #define BLUE	"\033[34m"

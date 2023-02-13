@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:42:24 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/12 21:44:54 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 13:01:11 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main() {
 {
     std::cout << std::endl;
-    std::cout << YELLOW << "[ TEST_1 ] : Example from subject" << RESET << std::endl;
+    std::cout << RED << "-----[ TEST_1 ] : Example from subject-----\n" << RESET << std::endl;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     delete j;//should not create a leak
@@ -25,7 +25,7 @@ int main() {
 }
 {
     std::cout << std::endl;
-    std::cout << YELLOW << "[ TEST_2 ] : Example that subject requires" << RESET << std::endl;
+    std::cout << RED << "---[ TEST_2 ] : Example that subject requires---\n" << RESET << std::endl;
     Animal  *array[SIZE];
     for (int i = 0; i < SIZE; i++) 
 	{
@@ -40,13 +40,38 @@ int main() {
 }
 {
     std::cout << std::endl;
-    std::cout << YELLOW << "[ TEST_3 ] : Deep Copies" << RESET << std::endl;
+    std::cout << RED << "-----[ TEST_3 ] : Deep Copies-----\n" << RESET << std::endl;
 
     const Dog     dog;
     const Cat     cat;
     Dog     dog1(dog);
     Cat     cat1(cat);
+    
+    // dog.getBrain()->getIdea(1);
+    std::cout << GRAY << dog.getBrain()->getIdea(2) << std::endl;
+    std::cout << dog1.getBrain()->getIdea(2) << std::endl;
+	dog.getBrain()->setIdea(2, "Dog new idea!!");
+    std::cout << dog.getBrain()->getIdea(2) << std::endl;
+    std::cout << dog1.getBrain()->getIdea(2) << std::endl;
 
+}
+{
+    std::cout << std::endl;
+    std::cout << RED << "-----[ TEST_4 ] : Deep Copies-----\n" << RESET << std::endl;
+    Dog dog;
+	Cat cat;
+	Dog dog2;
+	Cat cat2(cat);
+
+	dog2 = dog;
+
+	dog2.getBrain()->setIdea(0, "Dog new idea!!");
+	cat2.getBrain()->setIdea(8, "Cat new idea!!");
+
+	std::cout << GRAY << dog.getBrain()->getIdea(0) << std::endl;
+	std::cout << cat.getBrain()->getIdea(8) << std::endl;
+	std::cout << dog2.getBrain()->getIdea(0) << std::endl;
+	std::cout << cat2.getBrain()->getIdea(8) << std::endl;
 }
 // while(42){};
 }

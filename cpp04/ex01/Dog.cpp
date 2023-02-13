@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 15:43:14 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/12 21:20:28 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 13:02:20 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 Dog::Dog() : Animal("Dog")
 {
-	std::cout << GRAY << "[Dog] Default constructor called" << std::endl;
+	std::cout << PINK << "[Dog] Default constructor called" << std::endl;
 	this->_brain = new Brain();
 }
 
 Dog::Dog( Dog const &src )
 {
-	std::cout << GRAY << "[Dog] Copy Constructor called" << std::endl;
+	std::cout << PINK << "[Dog] Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = src;
 }
 
 Dog::~Dog()
 {
-	std::cout << GRAY << "[Dog] Destructor called" << std::endl;
+	std::cout << PINK << "[Dog] Destructor called" << std::endl;
 	delete _brain;
 }
 
 Dog &Dog::operator=( Dog const &src )
 {
-	std::cout << GRAY << "[Dog] Copy Assignment operator called" << std::endl;
+	std::cout << PINK << "[Dog] Copy Assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
 	this->_type = src._type;
@@ -43,7 +43,7 @@ Dog &Dog::operator=( Dog const &src )
 
 void Dog::makeSound()const
 {
-	std::cout << YELLOW << "Woof woof!" << std::endl;
+	std::cout << PINK << "Woof woof!" << std::endl;
 }
 
 Brain	*Dog::getBrain() const 

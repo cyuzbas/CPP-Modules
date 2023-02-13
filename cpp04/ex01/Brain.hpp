@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/10 17:38:36 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/11 17:27:45 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/13 12:59:46 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 
 #define GRAY	"\033[30m"
-#define RED  	"\033[31m"
+#define RED  	"\033[1;31m"
 #define GREEN 	"\033[32m"
 #define YELLOW	"\033[33m"
 #define BLUE	"\033[34m"
@@ -39,6 +39,7 @@ public:
 	Brain &operator=( Brain const &src );
 	
 	const std::string &getIdea( int i ) const;
+	void setIdea( int i, std::string idea );
 
 };
 

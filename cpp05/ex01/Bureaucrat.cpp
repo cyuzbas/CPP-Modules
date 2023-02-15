@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 18:23:23 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/14 17:32:56 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/15 12:51:50 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,17 @@ void	Bureaucrat::decrementGrade()
 	}
 	else
 		throw (GradeTooLowException());
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try {
+        form.beSigned(*this);
+        std::cout << _name << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e) {
+        std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw() {

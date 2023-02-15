@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:39:46 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/14 18:34:16 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/15 13:14:02 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,55 @@ Form& Form::operator=(const Form& src) {
 
 	// std::cout << "Copy Assignment operator called." << std::endl;
 	this->_isSigned = src._isSigned;
+	const_cast<std::string &>(_name) = src.getName();
+	const_cast<int &>(_gradeToSign) = src.getGradeToSign();
+    const_cast<int &>(_gradeToExecute) = src.getGradeToExecute();
 	return *this;
+}
+
+std::string	const Form::getName() const
+{
+	return this->_name;	
+}
+
+bool Form::getIsSigned() const
+{
+	return this->_isSigned;
+}
+
+int	Form::getGradeToSign() const
+{
+	return this->_gradeToSign;
+}
+
+int	Form::getGradeToExecute() const
+{
+	return this->_gradeToExecute;
+}
+
+void Form::beSigned(const Bureaucrat& bureaucrat)
+{
+	if (bureaucrat.getGrade() <= getGradeToSign())
+		this->_isSigned = true;
+	else
+		throw (GradeTooLowException());
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return "[Form] Grade Too Low";
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return "[Form] Grade Too High";
+}
+
+std::ostream & operator<<(std::ostream &o, Form const &obj)
+{
+	o << PINK << "Form name: " << obj.getName() << std::endl << "Is signed: "; 
+	obj.getIsSigned() ? o << "True" : o << "False";
+	o << std::endl << "Grade to sign: " << obj.getGradeToSign() << std::endl <<
+	"Grade to execute: " << obj.getGradeToExecute() << RESET << std::endl;
+	return o;
 }

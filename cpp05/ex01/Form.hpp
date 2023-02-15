@@ -6,14 +6,19 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:39:43 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/14 18:20:03 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/15 13:02:40 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include <iostream>
+#include <string>
+#include <exception>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -29,11 +34,11 @@ public:
 	Form();
 	Form(std::string name, int gradeToSign, int gradeToExecute);
 	Form(const Form &src);
-	~Form();
+	virtual ~Form();
 	
 	Form& operator=(const Form &src);
 	
-	const std::string	getName() const;
+	std::string const	getName() const;
 	bool				getIsSigned() const;
 	int					getGradeToSign() const;
 	int					getGradeToExecute() const;
@@ -51,5 +56,7 @@ public:
 	};
 	
 };
+
+std::ostream & operator<<(std::ostream &o, Form const &obj);
 
 #endif

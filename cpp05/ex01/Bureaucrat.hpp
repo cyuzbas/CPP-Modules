@@ -6,17 +6,17 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 18:23:18 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/14 17:49:21 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/15 13:02:59 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Form.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
 
 #define GRAY	"\033[30m"
 #define RED  	"\033[31m"
@@ -26,6 +26,8 @@
 #define PINK	"\033[35m"
 #define CYAN	"\033[36m"
 #define RESET	"\033[0m"
+
+class Form;
 
 class Bureaucrat
 {

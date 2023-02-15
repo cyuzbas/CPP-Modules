@@ -6,7 +6,7 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 18:23:23 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/14 18:22:27 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/15 10:27:44 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ void	Bureaucrat::decrementGrade()
 }
 
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw() {
-    return "Grade Too High";
+    return "WARNING!!! Grade Too High";
 }
 
 const char *Bureaucrat::GradeTooLowException::what( void ) const throw() {
-    return "Grade Too Low";
+    return "WARNING!!! Grade Too Low";
 }
 
 std::ostream & operator<<(std::ostream &o, Bureaucrat const &obj)

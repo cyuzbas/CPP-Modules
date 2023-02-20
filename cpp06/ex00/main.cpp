@@ -6,16 +6,11 @@
 /*   By: cyuzbas <cyuzbas@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 10:13:32 by cyuzbas       #+#    #+#                 */
-/*   Updated: 2023/02/17 16:02:49 by cyuzbas       ########   odam.nl         */
+/*   Updated: 2023/02/20 13:07:55 by cyuzbas       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
-
-// int detectType(std::string input)
-// {
-// 	if ()
-// }
 
 int main(int argc, char **argv)
 {
